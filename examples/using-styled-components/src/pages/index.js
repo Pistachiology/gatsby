@@ -1,6 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import styled from "styled-components"
+import StupidComponent from "../utils/StupidComponent"
 
 // Create a Title component that'll render an <h1> tag with some styles
 const Title = styled.h1`
@@ -19,10 +20,10 @@ const Wrapper = styled.section`
 class IndexPage extends React.Component {
   handleClick = () => {
     console.log(`Sync-Click!`)
-    import(/* webpackChunkName: "async-alert", webpackPreload: true */ `../utils/async-alert`).then(module => {
-      const asyncAlert = module.default
-      asyncAlert(`Async-Click!`)
-    })
+    // import(/* webpackChunkName: "async-alert", webpackPreload: true */ `../utils/async-alert`).then(module => {
+    //   const asyncAlert = module.default
+    //   asyncAlert(`Async-Click!`)
+    // })
   }
 
   render() {
@@ -51,6 +52,7 @@ class IndexPage extends React.Component {
               <button onClick={this.handleClick}>
                 gatsby-plugin-styled-component
               </button>
+              <StupidComponent />
             </p>
           </Wrapper>
         </div>
